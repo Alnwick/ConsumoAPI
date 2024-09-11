@@ -15,11 +15,12 @@ public class Main {
 
     public void menu(){
 
-        //
+        //Datos generales de la Serie
         System.out.println("Serie por buscar: ");
         var name = scan.nextLine();
         var json = useAPI.getData(URL_BASE + name.replace(" ", "+") + API_KEY);
         var data = convert.getData(json, DataSerie.class);
 
+        System.out.println(data);
     }
 }

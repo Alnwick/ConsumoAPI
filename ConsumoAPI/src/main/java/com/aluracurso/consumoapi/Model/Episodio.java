@@ -12,17 +12,17 @@ public class Episodio {
 
     public Episodio(Integer num, DataEpisodio d){
         this.temporada = num;
-        this.titulo = d.Title();
-        this.numeroEpisodio = d.Episode();
+        this.titulo = d.titulo();
+        this.numeroEpisodio = d.numeroEpisodio();
 
         try{
-            this.evaluacion = Double.parseDouble(d.imdbRating());
+            this.evaluacion = Double.parseDouble(d.evaluacion());
         } catch (NumberFormatException e){
             this.evaluacion = 0.0;
         }
 
         try{
-            this.fechaDeLanzamiento = LocalDate.parse(d.Released());
+            this.fechaDeLanzamiento = LocalDate.parse(d.fechaDeLanzamiento());
         } catch (DateTimeParseException e){
             this.fechaDeLanzamiento = null;
         }
